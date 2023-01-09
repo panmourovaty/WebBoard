@@ -11,8 +11,8 @@ if (file_exists($target_file)) {
 }
 
 // Allow certain file formats
-if($imageFileType != "zip" ) {
-  echo "Sorry, only zip templates are allowed.";
+if($imageFileType != "zst" ) {
+  echo "Sorry, only .tar.zst templates are allowed.";
   $uploadOk = 0;
 }
 

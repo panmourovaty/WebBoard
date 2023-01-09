@@ -7,7 +7,8 @@ case $1 in
     ;;
 
   "deploy")
-    STATEMENTS
+    mkdir -p ./files/servers/$2
+    tar -I zstd -xf ./files/templates/$3 -C ./files/servers/$2
     ;;
 
   *)

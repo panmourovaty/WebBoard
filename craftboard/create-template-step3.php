@@ -1,11 +1,7 @@
 <?php
 include 'config.php';
-try {
-$phar = new PharData('./files/templates/'.htmlspecialchars($_POST["templatename"]));
-$phar->extractTo('./files/servers/'.htmlspecialchars($_POST["servername"]));
-} catch (Exception $e) {
-    // handle errors
-}
+
+shell_exec('./archive-toolbox.sh "deploy" '.$_POST["servername"].' '.$_POST["templatename"]);
 
 $output = shell_exec('./create.sh '.$workfolder.' '.$_POST["servername"].' '.$_POST["serverport"]);
 echo "<pre>$output</pre>";
