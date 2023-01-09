@@ -8,7 +8,7 @@ case $1 in
 
   "deploy")
     mkdir -p ./files/servers/$2
-    tar -I zstd -xf ./files/templates/$3 -C ./files/servers/$2
+    tar --no-same-owner --no-same-permissions -I zstd -xf ./files/templates/$3 -C ./files/servers/$2
     ;;
 
   *)
