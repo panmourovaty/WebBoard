@@ -48,8 +48,8 @@
             ?>
                 <div class="container-fluid pt-4 px-4">
                     <div class="col-sm-12 col-xl-6">
-                    <h4 class="mb-4">Runners</h4>
                         <div class="bg-light rounded h-100 p-4">
+                        <h4 class="mb-4">Runners</h4>
                            <?php
                             $officialrunners = array('craftboard/runner-alpaquita-liberica-17', 'craftboard/runner-alpaquita-liberica-11', 'craftboard/runner-alpaquita-liberica-8', 'craftboard/runner-ubuntu-temurin-17');
                             foreach ($officialrunners as &$i) {
@@ -59,11 +59,11 @@
                             
                                 if ($return != 0)
                                 {
-                                    echo '<p style="color:yellow">'.$i.'</p><br>';
+                                    echo '<p style="color:red">'.$i.'</p><br>';
                                 }
                                 else
                                 {
-                                    echo '<p style="color:green">'.$i.'</p><br>';
+                                    echo '<p style="color:green">'.$i.'</p><a href="runner-manage.php?image_action=update&image_name='.$i.'"><button type="button" style="float: right;" class="btn btn-primary m-2">Update</button></a><br>';
                                 }
                            }
                            ?>
