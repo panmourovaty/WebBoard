@@ -59,14 +59,14 @@
                             
                                 if ($return != 0)
                                 {
-                                    echo '<p style="color:red">'.$i.'</p><br>';
+                                    echo '<br><button type="button" class="btn btn-outline-danger">'.$i.'</button><br>';
                                 }
                                 else
                                 {
-                                    echo '<p style="color:green">'.$i.' <a href="runner-manage.php?runner_action=update&runner_name='.$i.'"><button type="button" class="btn btn-primary">Update</button></a></p><br>';
+                                    echo '<br><button type="button" class="btn btn-outline-success">'.$i.'</button> <a href="runner-manage.php?runner_action=update&runner_name='.$i.'"><button type="button" class="btn btn-primary">Update</button></a><br>';
                                 }
                            }
-                           echo "After update restart each container using that runner";
+                           echo "<br>After update restart each container using that runner";
                            ?>
                         </div>
                     </div>
