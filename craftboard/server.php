@@ -60,7 +60,7 @@
                         }
                     ?>
                         <div class="col-sm-12 col-xl-6">
-                            <div class="bg-light rounded h-100 p-4">
+                            <div class="bg-light rounded h-100 p-6">
                                 <h2 class="mb-4"><?php echo htmlspecialchars($_GET["server_name"]); ?></h2>
                                 <br>
                                 Status: <?php
