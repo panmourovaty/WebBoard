@@ -53,52 +53,19 @@
                     <h4 class="mb-4">Runners</h4>
                         <div class="bg-light rounded h-100 p-4">
                            <?php
-                           $output = array();
-                           $result1 = exec('/bin/sh docker image inspect craftboard/runner-alpaquita-liberica-17:latest', $output, $return);
-                           
-                           if ($return != 0)
-                           {
-                            echo '<p style="color:yellow">craftboard/runner-alpaquita-liberica-17</p>'
-                           }
-                           else
-                           {
-                            echo '<p style="color:green">craftboard/runner-alpaquita-liberica-17</p>'
-                           }
-                           echo '<br>';
-                           $output = array();
-                           $result1 = exec('/bin/sh docker image inspect craftboard/runner-alpaquita-liberica-11:latest', $output, $return);
-                           
-                           if ($return != 0)
-                           {
-                            echo '<p style="color:yellow">craftboard/runner-alpaquita-liberica-11</p>'
-                           }
-                           else
-                           {
-                            echo '<p style="color:green">craftboard/runner-alpaquita-liberica-11</p>'
-                           }
-                           echo '<br>';
-                           $output = array();
-                           $result1 = exec('/bin/sh docker image inspect craftboard/runner-alpaquita-liberica-8:latest', $output, $return);
-                           
-                           if ($return != 0)
-                           {
-                            echo '<p style="color:yellow">craftboard/runner-alpaquita-liberica-8</p>'
-                           }
-                           else
-                           {
-                            echo '<p style="color:green">craftboard/runner-alpaquita-liberica-8</p>'
-                           }
-                           echo '<br>';
-                           $output = array();
-                           $result1 = exec('/bin/sh docker image inspect craftboard/runner-ubuntu-temurin-17:latest', $output, $return);
-                           
-                           if ($return != 0)
-                           {
-                            echo '<p style="color:yellow">craftboard/runner-ubuntu-temurin-17</p>'
-                           }
-                           else
-                           {
-                            echo '<p style="color:green">craftboard/runner-ubuntu-temurin-17</p>'
+                            $officialrunners = array('craftboard/runner-alpaquita-liberica-17', 'craftboard/runner-alpaquita-liberica-11', 'craftboard/runner-alpaquita-liberica-8', 'craftboard/runner-ubuntu-temurin-17');
+                            foreach ($officialrunners as &$i) {
+                                $output = array();
+                                $result1 = exec('/bin/sh docker image '.$i, $output, $return);
+                            
+                                if ($return != 0)
+                                {
+                                    echo '<p style="color:yellow">'.$i.'</p><br>';
+                                }
+                                else
+                                {
+                                    echo '<p style="color:green">'.$i.'</p><br>';
+                                }
                            }
                            ?>
                         </div>
