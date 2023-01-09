@@ -66,7 +66,7 @@
                                     echo '<p style="color:green">'.$i.' <a href="runner-manage.php?runner_action=update&runner_name='.$i.'"><button type="button" class="btn btn-primary">Update</button></a></p><br>';
                                 }
                            }
-                           echo "After update restart each container using updated runner";
+                           echo "After update restart each container using that runner";
                            ?>
                         </div>
                     </div>
