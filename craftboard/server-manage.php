@@ -9,7 +9,7 @@ switch ($_GET["server_action"]) {
       header('Location: ' . $_SERVER['HTTP_REFERER']);
       break;
   case "backup":
-      shell_exec('cd ./files/servers/'.$_GET["server_name"].' && zip -r ../../backups/'.$_GET["server_name"].'_$(date +%M:%H-%d-%m-%Y).zip .');
+      shell_exec('cd ./files/servers/'.$_GET["server_name"].' && zip -r ../../backups/'.$_GET["server_name"].'_$(date +%H:%M-%d-%m-%Y).zip .');
       header('Location: ' . $_SERVER['HTTP_REFERER']);
       break;
   case "delete":
