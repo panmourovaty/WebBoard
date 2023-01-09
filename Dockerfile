@@ -6,7 +6,7 @@ ENV PHP_VERSION=8.2
 RUN apt-get update && apt-get dist-upgrade -y
 
 # Install dependencies
-RUN apt-get -y install apt-transport-https lsb-release ca-certificates curl gnupg2 apt-utils git sudo zip socat zstd
+RUN apt-get -y install apt-transport-https lsb-release ca-certificates curl gnupg2 apt-utils git sudo zip socat zstd neovim
 
 # Add php repo keys
 RUN curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg && sh -c 'echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list' && apt-get update && apt-get dist-upgrade -y
