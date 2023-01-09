@@ -3,7 +3,7 @@ case $1 in
 
   "backup")
     cd ./files/servers/$2
-    tar --zstd -cf ../../backups/$2_$(date +%H:%M-%d-%m-%Y).tar.zst *
+    tar --owner=0 --group=0 -I "zstd -T0 -8" -cf ../../backups/$2_$(date +%H:%M-%d-%m-%Y).tar.zst *
     ;;
 
   "deploy")
