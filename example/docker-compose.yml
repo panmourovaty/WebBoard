@@ -1,0 +1,10 @@
+version: "3"
+services:
+  craftboard:
+    image: panmourovaty/craftboard
+    ports:
+     - 80:80
+    volumes:
+      - ./files:/var/www/app/files
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
