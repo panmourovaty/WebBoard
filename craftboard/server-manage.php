@@ -9,7 +9,7 @@ switch ($_GET["server_action"]) {
       header('Location: ' . $_SERVER['HTTP_REFERER']);
       break;
   case "backup":
-      shell_exec('./archive-toolbox.sh '.$_GET["server_name"]);
+      shell_exec('./archive-toolbox.sh "backup" '.$_GET["server_name"]);
       header('Location: ' . $_SERVER['HTTP_REFERER']);
       break;
   case "delete":
