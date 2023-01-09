@@ -4,6 +4,8 @@
 <head>
 <?php
     include 'common.php';
+    $runner_info_json = shell_exec('docker images --format "{{json . }}"');
+    $runner_info = json_decode($server_info_json, true);
 ?>
 </head>
 
@@ -45,7 +47,27 @@
         <div class="content">
             <?php
                 include 'navbar.php';
-            ?>   
+            ?>
+                <div class="container-fluid pt-4 px-4">
+                    <div class="col-sm-12 col-xl-6">
+                    <h4 class="mb-4">Runners</h4>
+                        <div class="bg-light rounded h-100 p-4">
+                           <?php
+                           $output = array();//Each line will be assigned to this array if any are generated.
+                           $result1 = exec('/bin/sh docker image inspect craftboard/runner-alpaquita-liberica-17:latest', $output, $return);
+                           
+                           if ($return != 0)
+                           {
+                            echo '<p style="color:yellow">craftboard/runner-alpaquita-liberica-17</p>'
+                           }
+                           else
+                           {
+                            echo '<p style="color:green">craftboard/runner-alpaquita-liberica-17</p>'
+                           }
+                           ?>
+                        </div>
+                    </div>
+            </div>
         </div>
     </div>
 </body>
