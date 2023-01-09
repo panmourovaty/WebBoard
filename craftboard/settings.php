@@ -4,8 +4,6 @@
 <head>
 <?php
     include 'common.php';
-    $runner_info_json = shell_exec('docker images --format "{{json . }}"');
-    $runner_info = json_decode($server_info_json, true);
 ?>
 </head>
 
@@ -55,8 +53,9 @@
                            <?php
                             $officialrunners = array('craftboard/runner-alpaquita-liberica-17', 'craftboard/runner-alpaquita-liberica-11', 'craftboard/runner-alpaquita-liberica-8', 'craftboard/runner-ubuntu-temurin-17');
                             foreach ($officialrunners as &$i) {
-                                $output = array();
-                                $result1 = exec('/bin/sh docker image '.$i, $output, $return);
+                                $output=null;
+                                $return=null;
+                                exec('docker image inspect '.$i, $output, $return);
                             
                                 if ($return != 0)
                                 {
