@@ -63,7 +63,7 @@
                                 }
                                 else
                                 {
-                                    echo '<p style="color:green">'.$i.'</p><a href="runner-manage.php?image_action=update&image_name='.$i.'"><button type="button" class="btn btn-primary">Update</button></a><br>';
+                                    echo '<p style="color:green">'.$i.' <a href="runner-manage.php?runner_action=update&runner_name='.$i.'"><button type="button" class="btn btn-primary">Update</button></a></p><br>';
                                 }
                            }
                            echo "After update restart each container using updated runner";
