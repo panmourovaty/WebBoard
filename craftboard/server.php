@@ -53,7 +53,7 @@
                     <div class="bg-light rounded h-100 p-4">
                     <?php 
                         if ($server_info[0]['State']['Status'] == "running" || $server_info[0]['State']['Status'] == "starting") {
-                            echo '<a href="server-manage.php?server_action=stop&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-danger m-2">Stop</button></a>';
+                            echo '<a href="server-manage.php?server_action=restart&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-outline-danger m-2">Restart</button></a><a href="server-manage.php?server_action=stop&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-danger m-2">Stop</button></a>';
                         }
                         else {
                             echo '<a href="server-manage.php?server_action=start&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-success m-2">Start</button>';
