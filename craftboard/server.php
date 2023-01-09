@@ -53,7 +53,7 @@
                     <div class="bg-light rounded h-100 p-4">
                     <?php 
                         if ($server_info[0]['State']['Status'] == "running" || $server_info[0]['State']['Status'] == "starting") {
-                            echo '<a href="server-manage.php?server_action=restart&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-outline-danger m-2">Restart</button></a><a href="server-manage.php?server_action=stop&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-danger m-2">Stop</button></a>';
+                            echo '<a href="server-manage.php?server_action=stop&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-danger m-2">Stop</button></a><a href="server-manage.php?server_action=restart&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-outline-danger m-2">Restart</button></a>';
                         }
                         else {
                             echo '<a href="server-manage.php?server_action=start&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-success m-2">Start</button>';
@@ -97,9 +97,9 @@
                                 <br>
                                 <br>
                                 <a href="#" onClick="MyWindow=window.open('server-console.php?server_name=<?php echo htmlspecialchars($_GET["server_name"]); ?>','MyWindow','width=800,height=600'); return false;"><button type="button" class="btn btn-sm btn-secondary m-2">Console</button></a>
-                                <?php echo '<a href="server-manage.php?server_action=backup&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-secondary m-2">Make Backup</button></a>'; ?>
                                 <a href="#" onClick="MyWindow=window.open('tinyfilemanager.php?p=<?php echo $_GET["server_name"].'/server'; ?>','MyWindow','width=1280,height=720'); return false;"><button type="button" class="btn btn-sm btn-secondary m-2">File Manager</button></a>
-                                <?php echo '<a onclick="return confirm(\'Are you sure?\')" href="server-manage.php?server_action=delete&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-danger m-2">Delete</button></a>'; ?>                                
+                                <?php echo '<a onclick="return confirm(\'Are you sure?\')" href="server-manage.php?server_action=delete&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-danger m-2">Delete</button></a>'; ?>    
+                                <?php echo '<a href="server-manage.php?server_action=backup&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-secondary m-2">Make Backup</button></a>'; ?>                            
                     </div>
                 </div>
             </div>
