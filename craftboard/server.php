@@ -98,7 +98,7 @@
                                 <br>
                                 <a href="#" onClick="MyWindow=window.open('server-console.php?server_name=<?php echo htmlspecialchars($_GET["server_name"]); ?>','MyWindow','width=800,height=600'); return false;"><button type="button" class="btn btn-sm btn-secondary m-2">Console</button></a>
                                 <a href="#" onClick="MyWindow=window.open('tinyfilemanager.php?p=<?php echo $_GET["server_name"].'/server'; ?>','MyWindow','width=1280,height=720'); return false;"><button type="button" class="btn btn-sm btn-secondary m-2">File Manager</button></a>
-                                <a href="#" onClick="MyWindow=window.open('server-edit.php?server_name=<?php echo $_GET["server_name"]; ?>','MyWindow','width=800,height=700'); return false;"><button type="button" class="btn btn-sm btn-secondary m-2">Edit</button></a>
+                                <a href="#" onClick="MyWindow=window.open('server-edit.php?server_name=<?php echo $_GET["server_name"]; ?>','MyWindow','width=800,height=650'); return false;"><button type="button" class="btn btn-sm btn-secondary m-2">Edit</button></a>
                                 <?php echo '<a onclick="return confirm(\'Are you sure?\')" href="server-manage.php?server_action=delete&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-danger m-2">Delete</button></a>'; ?>    
                                 <?php echo '<a href="server-manage.php?server_action=backup&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-secondary m-2">Make Backup</button></a>'; ?>                            
                     </div>
