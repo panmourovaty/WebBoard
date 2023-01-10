@@ -4,6 +4,8 @@
 <head>
 <?php
     include 'common.php';
+    $system_info_json = shell_exec('docker system info --format "{{json .}}"');
+    $system_info = json_decode($system_info_json, true);
 ?>
 </head>
 
@@ -45,8 +47,62 @@
         <div class="content">
             <?php
                 include 'navbar.php';
-            ?>   
+            ?>
+<div class="container-fluid pt-4 px-4">
+    <div class="col-sm-12 col-xl-6">
+        <div class="bg-light rounded h-100 p-4">
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-light rounded h-100 p-6">
+                    <h4 class="mb-4">System Info</h4>
+                    <br>
+                    <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td>System Name</td>
+                                        <td><?php echo $system_info['Name']; ?></td>
+                                    </tr>
+                                    <tr><td><td></tr>
+                                    <tr><td><td></tr>
+                                    <tr><td><td></tr>
+                                    <tr>
+                                        <td>Operating System</td>
+                                        <td><?php echo $system_info['OperatingSystem']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Docker Version</td>
+                                        <td><?php echo $system_info['ServerVersion']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kernel</td>
+                                        <td><?php echo $system_info['KernelVersion']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Arch</td>
+                                        <td><?php echo $system_info['Architecture']; ?></td>
+                                    </tr>
+                                    <tr><td><td></tr>
+                                    <tr><td><td></tr>
+                                    <tr>
+                                        <td>Storage</td>
+                                        <td><?php echo $system_info['Storage']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CPU Cores</td>
+                                        <td><?php echo $system_info['NCPU']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Memory</td>
+                                        <td><?php echo $system_info['MemTotal']/"1073741824"; ?> GiB</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                </div>
+            </div>
         </div>
     </div>
+    </div>
+    </div>
+    </div>
+</div>
 </body>
 </html>
