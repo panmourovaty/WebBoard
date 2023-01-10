@@ -1,7 +1,7 @@
 version: "3"
 services:
   craftboard:
-    image: panmourovaty/craftboard
+    image: craftboard/craftboard
     ports:
      - 80:80
     volumes:
