@@ -8,6 +8,7 @@
         {
             session_start();
             $_SESSION['login'] = true;
+            $_SESSION['username'] = $username;
             header('Location: index.php');
         } 
         else
