@@ -53,13 +53,13 @@
         <div class="bg-light rounded h-100 p-4">
             <div class="col-sm-12 col-xl-6">
                 <div class="bg-light rounded h-100 p-6">
-                    <h4 class="mb-4">System Info</h4>
+                    <h2 class="mb-4">System Info</h2>
                     <br>
                     <table class="table table-borderless">
                                 <tbody>
                                     <tr>
-                                        <td>System Name</td>
-                                        <td><?php echo $system_info['Name']; ?></td>
+                                        <td><b>System Name</b></td>
+                                        <td><b><?php echo $system_info['Name']; ?></b></td>
                                     </tr>
                                     <tr><td><td></tr>
                                     <tr><td><td></tr>
