@@ -1,16 +1,16 @@
 <?php      
     require('database.php');  
-        $username = stripcslashes($_POST['username'];);  
-      
-        $sql = 'SELECT password FROM users WHERE username="'.$username.'" ';
-        $result = $db->query($sql);
-
-        if (password_verify($_POST['password'];, $result)) 
+        $username = stripcslashes($_POST['username']);  
+        $sql = $database->prepare('SELECT password FROM users WHERE username="'.$username.'"');         
+        $result = $sql->execute();
+        $data = $result->fetchArray();
+        if (password_verify($_POST['password'], $data['password'])) 
         {
-            echo 'Password is valid!';
+            $_SESSION['login'] = true;
+            header('index.php');
         } 
         else
         {
             echo 'Invalid password.';
         }
-?>  
+?>

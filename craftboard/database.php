@@ -5,7 +5,7 @@ if (file_exists("files/craftboard.db"))
 } 
 else 
 {
-    copy('craftboard-example.db', 'files/craftboard.db')
+    copy('craftboard-example.db', 'files/craftboard.db');
     $database = new SQLite3('files/craftboard.db');
 }
 ?>

@@ -3,6 +3,7 @@
 
 <head>
 <?php
+    require 'account-common.php';
     include 'common.php';
     $system_info_json = shell_exec('docker system info --format "{{json .}}"');
     $system_info = json_decode($system_info_json, true);

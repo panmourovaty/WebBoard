@@ -29,17 +29,14 @@
                             </a>
                             <h3>Log in</h3>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input type="username" class="form-control" id="floatingInput" placeholder="username" required>
-                            <label for="floatingInput">Username</label>
-                        </div>
-                        <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-                            <label for="floatingPassword">Password</label>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                        </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Log in</button>
+                        <form action="login-verify.php" method="post">
+                            <h6 class="mb-4">User Name:</h6>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                            <br>
+                            <h6 class="mb-4">Password:</h6>
+                            <input type="password" class="form-control" id="password" name="password" required><br>
+                            <button type="submit" class="btn btn-primary">Log in</button>
+                            </form>
                     </div>
                 </div>
             </div>
