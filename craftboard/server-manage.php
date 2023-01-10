@@ -20,5 +20,11 @@ switch ($_GET["server_action"]) {
       shell_exec('cd ./files/servers/'.$_GET["server_name"].' && docker-compose down && cd .. && rm -rf ./'.$_GET["server_name"]);
       header('Location: /');
       break;
+  case "edit":
+      fwrite('./files/servers/'.$_GET['server_name'].'/docker-compose.yml', $_POST['newtext']);
+      shell_exec('cd ./files/servers/'.$_GET["server_name"].' && docker-compose down && docker-compose up -d');
+      sleep(1);
+      echo "<script>myWindow.close();</script>";
+      break;
 }
 ?>

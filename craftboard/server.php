@@ -51,6 +51,7 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="col-sm-12 col-xl-6">
                     <div class="bg-light rounded h-100 p-4">
+                    <a href="server-edit.php?server_name=<?php echo $_GET["server_name"]; ?>"><button type="button" style="float: left;" class="btn btn-secondary m-2">Edit</button>
                     <?php 
                         if ($server_info[0]['State']['Status'] == "running" || $server_info[0]['State']['Status'] == "starting") {
                             echo '<a href="server-manage.php?server_action=stop&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-danger m-2">Stop</button></a><a href="server-manage.php?server_action=restart&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-outline-danger m-2">Restart</button></a>';
