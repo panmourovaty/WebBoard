@@ -84,7 +84,7 @@
                                     <tr><td><td></tr>
                                     <tr>
                                         <td>Storage</td>
-                                        <td><?php echo $system_info['Storage']; ?></td>
+                                        <td><?php echo $system_info['Driver']; ?></td>
                                     </tr>
                                     <tr>
                                         <td>CPU Cores</td>
