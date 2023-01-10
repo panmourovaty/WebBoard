@@ -6,8 +6,9 @@
         $data = $result->fetchArray();
         if (password_verify($_POST['password'], $data['password'])) 
         {
+            session_start();
             $_SESSION['login'] = true;
-            header('index.php');
+            header('Location: index.php');
         } 
         else
         {
