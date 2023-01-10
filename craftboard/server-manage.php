@@ -21,10 +21,12 @@ switch ($_GET["server_action"]) {
       header('Location: /');
       break;
   case "edit":
-      fwrite('./files/servers/'.$_GET['server_name'].'/docker-compose.yml', $_POST['newtext']);
+      $file = fopen('./files/servers/'.$_GET['server_name'].'/docker-compose.yml',"w");
+      fwrite($file, $_POST['newtext']);
+      fclose($file);
       shell_exec('cd ./files/servers/'.$_GET["server_name"].' && docker-compose down && docker-compose up -d');
       sleep(1);
-      echo "<script>myWindow.close();</script>";
+      echo "<script>closeWindow()</script>";
       break;
 }
 ?>
