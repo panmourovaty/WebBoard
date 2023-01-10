@@ -1,4 +1,5 @@
 <?php
+require 'account-common.php';
 include 'common.php';
 echo "<title>Editing ".$_GET["server_name"]."</title>";
 ?>

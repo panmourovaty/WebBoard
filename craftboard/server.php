@@ -3,6 +3,7 @@
 
 <head>
 <?php
+    require 'account-common.php';
     include 'common.php';
     $server_info_json = shell_exec('docker inspect '.$_GET["server_name"]);
     $server_info = json_decode($server_info_json, true);

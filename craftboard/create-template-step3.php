@@ -1,4 +1,5 @@
 <?php
+require 'account-common.php';
 include 'config.php';
 
 shell_exec('./archive-toolbox.sh "deploy" '.$_POST["servername"].' '.$_POST["templatename"]);

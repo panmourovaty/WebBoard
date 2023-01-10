@@ -1,4 +1,5 @@
 <?php
+require 'account-common.php';
 switch ($_GET["server_action"]) {
   case "stop":
       shell_exec('cd ./files/servers/'.$_GET["server_name"].' && docker-compose stop');

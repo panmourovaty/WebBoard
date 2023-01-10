@@ -1,4 +1,5 @@
 <?php
+require 'account-common.php';
 switch ($_GET["runner_action"]) {
   case "update":
     shell_exec('docker pull '.$_GET["runner_name"]);

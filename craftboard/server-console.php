@@ -1,4 +1,5 @@
 <?php
+    require 'account-common.php';
     include 'common.php';
     echo '<div class="bg-light h-100 p-4">';
     echo "<title>".$_GET["server_name"]." logs</title>";

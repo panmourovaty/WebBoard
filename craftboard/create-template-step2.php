@@ -3,6 +3,7 @@
 
 <head>
 <?php
+    require 'account-common.php';
     include 'common.php';
 ?>
 </head>

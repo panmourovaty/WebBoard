@@ -1,4 +1,5 @@
 <?php
+require 'account-common.php';
 $target_dir = "./files/templates/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
