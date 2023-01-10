@@ -63,7 +63,7 @@
                                 }
                                 else
                                 {
-                                    echo '<a href="#" onClick="MyWindow=window.open(\'runner-manage.php?runner_action=inspect&runner_name='.$i.'\'); ?>\',\'MyWindow\',\'width=800,height=600\'); return false;"><br><button type="button" class="btn btn-outline-success">'.$i.'</button></a> <a href="runner-manage.php?runner_action=update&runner_name='.$i.'"><button type="button" class="btn btn-primary">Update</button></a><br>';
+                                    echo '<br><a href="#" onClick="MyWindow=window.open(\'runner-manage.php?runner_action=inspect&runner_name='.$i.'\',\'MyWindow\',\'width=800,height=600\'); return false;"><button type="button" class="btn btn-outline-success">'.$i.'</button></a><br>';
                                 }
                            }
                            echo "<br>After update restart each container using that runner";
