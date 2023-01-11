@@ -68,20 +68,20 @@ switch ($_POST['servertype']) {
                 break;
         }
         break;
-    case 'forge'
-    switch ($_POST['serverversion']) {
-        case '1.19.3':
-            $userunner = 'craftboard/runner-alpaquita-liberica-17';
-            break;
-        case '1.16.5':
-            $userunner = 'craftboard/runner-alpaquita-liberica-11';
-            break;
-        case '1.12.2':
-            $userunner = 'craftboard/runner-alpaquita-liberica-8';
-            break;
-        case '1.7.10':
-            $userunner = 'craftboard/runner-alpaquita-liberica-8';
-            break;
+    case 'forge':
+        switch ($_POST['serverversion']) {
+            case '1.19.3':
+                $userunner = 'craftboard/runner-alpaquita-liberica-17';
+                break;
+            case '1.16.5':
+                $userunner = 'craftboard/runner-alpaquita-liberica-11';
+                break;
+            case '1.12.2':
+                $userunner = 'craftboard/runner-alpaquita-liberica-8';
+                break;
+            case '1.7.10':
+                $userunner = 'craftboard/runner-alpaquita-liberica-8';
+                break;
     }
     case 'custom':
         $userunner = 'craftboard/runner-alpaquita-liberica-17';
