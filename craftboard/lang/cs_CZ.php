@@ -65,6 +65,6 @@ $lang = array(
     "upload" => "Nahrát",
     "servertype" => "Typ serveru",
     "serverversion" => "Verze serveru",
-    "dontchangeportmessage" => "Neměňte port zde, nechte na výchozí (25565).",
+    "dontchangeportmessage" => "Neměňte port zde, nechte výchozí (25565).",
 );
 ?>

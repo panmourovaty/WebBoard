@@ -65,6 +65,6 @@ $lang = array(
     "upload" => "Upload",
     "servertype" => "Server Type",
     "serverversion" => "Server Version",
-    "dontchangeportmessage" => "Do not change port in here, leave to default (25565).",
+    "dontchangeportmessage" => "Do not change port here, leave to default (25565).",
 );
 ?>
