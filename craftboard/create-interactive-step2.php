@@ -25,7 +25,7 @@ switch ($_POST['servertype']) {
         file_put_contents('./files/servers/'.$_POST['servername'].'/server/server.jar', file_get_contents('https://serverjars.com/api/fetchJar/modded/forge/'.$_POST['serverversion']));
         break;
     case 'custom':
-        file_put_contents('./files/servers/'.$_POST['servername'].'/server/server.jar', file_get_contents($_POST['customjar'];));
+        file_put_contents('./files/servers/'.$_POST['servername'].'/server/server.jar', file_get_contents($_POST['customjar']));
         break;
 }
 
