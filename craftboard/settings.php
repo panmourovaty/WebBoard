@@ -85,8 +85,7 @@
                             $sql = $database->prepare('SELECT username FROM users');
                             $result = $sql->execute();
                             while ($data = $result->fetchArray()) {
-                                    echo '<tr><td>'.$data['username'].'</td></tr>';
-                                    echo '<a onclick="return confirm(\''.$lang['areyousure'].'\')" href="account-delete.php?username=' . $data['username'] . '"><button type="button" class="btn btn-sm btn-danger m-2"><i class="fa-solid fa-trash"></i></button></a>';
+                                    echo '<tr><td>'.$data['username'].'<a onclick="return confirm(\''.$lang['areyousure'].'\')" href="account-delete.php?username=' . $data['username'] . '"><button type="button" class="btn btn-sm btn-danger m-2"><i class="fa-solid fa-trash"></i></button></a></td></tr>';
                             }
                            ?>
                            </tbody>
