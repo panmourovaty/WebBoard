@@ -102,6 +102,7 @@ services:
     stdin_open: true';
 
 file_put_contents('./files/servers/'.$_POST['servername'].'/docker-compose.yml', $composefile);
+file_put_contents('./files/servers/'.$_POST['servername'].'/server/eula.txt', 'eula=true');
 
 shell_exec('./create-int.sh '.$workfolder.' '.$_POST["servername"]);
 header('Location: /server.php?server_name='.$_POST["servername"]);
