@@ -9,8 +9,6 @@ $file = fopen('./files/servers/'.$_POST['servername'].'/server/server.properties
 fwrite($file, $_POST['serverproperties']);
 fclose($file);
 
-$composefileparsed = yaml_parse($composefile);
-
 switch ($_POST['servertype']) {
     case 'vannila':
         file_put_contents('./files/servers/'.$_POST['servername'].'/server/server.jar', file_get_contents('https://serverjars.com/api/fetchJar/servers/purpur/'.$_POST['serverversion']));
