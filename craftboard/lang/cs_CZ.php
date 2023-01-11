@@ -63,5 +63,7 @@ $lang = array(
     "username" => "Uživatelské jméno",
     "password" => "Heslo",
     "upload" => "Nahrát",
+    "servertype" => "Typ serveru",
+    "serverversion" => "Verze serveru",
 );
 ?>

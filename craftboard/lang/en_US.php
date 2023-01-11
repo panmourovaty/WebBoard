@@ -65,11 +65,5 @@ $lang = array(
     "upload" => "Upload",
     "servertype" => "Server Type",
     "serverversion" => "Server Version",
-    "upload" => "Upload",
-    "upload" => "Upload",
-    "upload" => "Upload",
-    "upload" => "Upload",
-    "upload" => "Upload",
-    "upload" => "Upload",
 );
 ?>
