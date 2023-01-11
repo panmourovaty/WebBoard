@@ -35,6 +35,20 @@
                             <br>
                             <h6 class="mb-4">Password:</h6>
                             <input type="password" class="form-control" id="password" name="password" required><br>
+                            <select name="lang" id="lang">
+                            <?php
+                            if ($handle = opendir('./lang')) {
+                                while (false !== ($entry = readdir($handle))) {
+                                    if ($entry != "." && $entry != "..") {
+                                        include 'lang/'.$entry;
+                                        echo '<option value="'.$lang['langcode'].'">'.$lang['langname'].'</option>';
+                                    }   
+                                }
+
+                                closedir($handle);
+                            }
+                            ?>
+                            </select>
                             <button type="submit" class="btn btn-primary">Log in</button>
                         </form>
                     </div>

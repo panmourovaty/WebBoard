@@ -1,6 +1,6 @@
 <?php
 if ($_SESSION['username'] != "admin") {
-    echo 'This page is for Administrator only';
+    echo '<h1>This page is for Administrators only</h1>';
     exit();
 }
 ?>
