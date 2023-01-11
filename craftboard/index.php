@@ -4,6 +4,7 @@
 <head>
 <?php
     require 'account-common.php';
+    require 'lang.php';
     include 'common.php';
     $system_info_json = shell_exec('docker system info --format "{{json .}}"');
     $system_info = json_decode($system_info_json, true);
@@ -18,9 +19,9 @@
         <h3 class="text-primary"><i class="fa-solid fa-cube me-2"></i>CraftBoard</h3>
     </a>
     <div class="navbar-nav w-100">
-        <a href="/" class="nav-item nav-link active"><i class="fa fa-home me-2"></i>Dashboard</a>
+    <a href="/" class="nav-item nav-link"><i class="fa fa-home me-2 active"></i><?php echo $lang['dashboard']; ?></a>
         <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-server me-2"></i>Servers</a>
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-server me-2"></i><?php echo $lang['servers']; ?></a>
             <div class="dropdown-menu bg-transparent border-0">
             <?php
                     if ($handle = opendir('./files/servers')) {
@@ -38,10 +39,10 @@
             ?>
             </div>
         </div>
-        <a href="templates.php" class="nav-item nav-link"><i class="fa-solid fa-folder me-2"></i>Templates</a>
-        <a href="backups.php" class="nav-item nav-link"><i class="fa-solid fa-floppy-disk me-2"></i>Backups</a>
-        <a href="settings.php" class="nav-item nav-link"><i class="fa-solid fa-gear me-2"></i>Settings</a>
-        <a href="create.php" class="nav-item nav-link"><i class="fa fa-plus me-2"></i>Create New Server</a>
+        <a href="templates.php" class="nav-item nav-link"><i class="fa-solid fa-folder me-2"></i><?php echo $lang['templates']; ?></a>
+        <a href="backups.php" class="nav-item nav-link"><i class="fa-solid fa-floppy-disk me-2"></i><?php echo $lang['backups']; ?></a>
+        <a href="settings.php" class="nav-item nav-link"><i class="fa-solid fa-gear me-2"></i><?php echo $lang['settings']; ?></a>
+        <a href="create.php" class="nav-item nav-link"><i class="fa fa-plus me-2"></i><?php echo $lang['createserver']; ?></a>
     </div>
     </nav>
     </div> 
@@ -59,40 +60,40 @@
                     <table class="table table-borderless">
                                 <tbody>
                                     <tr>
-                                        <td><b>System Name</b></td>
+                                        <td><b><?php echo $lang['systemname']; ?></b></td>
                                         <td><b><?php echo $system_info['Name']; ?></b></td>
                                     </tr>
                                     <tr><td><td></tr>
                                     <tr><td><td></tr>
                                     <tr><td><td></tr>
                                     <tr>
-                                        <td>Operating System</td>
+                                        <td><?php echo $lang['operatingsystem']; ?></td>
                                         <td><?php echo $system_info['OperatingSystem']; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Docker Version</td>
+                                        <td><?php echo $lang['dockerversion']; ?></td>
                                         <td><?php echo $system_info['ServerVersion']; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Kernel</td>
+                                        <td><?php echo $lang['kernel']; ?></td>
                                         <td><?php echo $system_info['KernelVersion']; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Arch</td>
+                                        <td><?php echo $lang['arch']; ?></td>
                                         <td><?php echo $system_info['Architecture']; ?></td>
                                     </tr>
                                     <tr><td><td></tr>
                                     <tr><td><td></tr>
                                     <tr>
-                                        <td>Storage</td>
+                                        <td><?php echo $lang['storage']; ?></td>
                                         <td><?php echo $system_info['Driver']; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>CPU Cores</td>
+                                        <td><?php echo $lang['cpucores']; ?></td>
                                         <td><?php echo $system_info['NCPU']; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Memory</td>
+                                        <td><?php echo $lang['memory']; ?></td>
                                         <td><?php echo $system_info['MemTotal']/"1073741824"; ?> GiB</td>
                                     </tr>
                                 </tbody>
