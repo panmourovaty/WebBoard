@@ -48,53 +48,74 @@
             <?php
                 include 'navbar.php';
             ?>
+            <form action="create-interactive-step2.php.php" method="post">
             <div class="container-fluid pt-4 px-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                        <form action="create-interactive-step2.php.php" method="post">
+                            <h6 class="mb-4"><?php echo $lang['servername']; ?>:</h6>
+                            <input type="text" class="form-control" id="servername" name="servername" required>
+                            <br>
+                            <h6 class="mb-4"><?php echo $lang['serverport']; ?>:</h6>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">TCP</span>
+                                <input type="text" class="form-control" id="serverport" name="serverport" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="container-fluid pt-4 px-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                        
                             <h6 class="mb-4"><?php echo $lang['servertype']; ?></h6>
-                            <select class="form-select mb-3" name="serversoftware" id="serversoftware">
+                            <select  onchange="versionselect()" class="form-select mb-3" name="servertype" id="servertype">
                             <option value="vannila" selected>Vannila (Purpur)</option>
                             <option value="vannilaold">Vannila - old (official)</option>
                             <option value="fabric">Modded (Fabric)</option>
                             <option value="custom">Custom JAR</option>
                             </select>
-
-                            <script>
-                            if(document.getElementById('servertype').value != "custom"){
-                            document.write('<h6 class="mb-4"><?php echo $lang['serverversion']; ?></h6>');
-                            document.write('<select class="form-select mb-3" name="serverversion" id="serverversion" required>');
-                                if(document.getElementById('servertype').value == "vannila") {
-                                    document.write('<option value="1.19.3">1.19.3</option>');
-                                    document.write('<option value="1.16.5">1.16.5</option>');
-                                }
-                                if(document.getElementById('servertype').value == "fabric") {
-                                    document.write('<option value="1.19.3">1.19.3</option>');
-                                    document.write('<option value="1.16.5">1.16.5</option>');
-                                }
-                                if(document.getElementById('servertype').value == "vannilaold") {
-                                    document.write('<option value="1.12.2">1.12.2</option>');
-                                    document.write('<option value="1.7.10">1.7.10</option>');
-                                    document.write('<option value="1.4.7">1.4.7</option>');
-                                    document.write('<option value="b1.7.3">Beta 1.7.3</option>');
-                                }
-                            document.write('</select>');
-                            }
-                            else {
-                                <div class="input-group mb-3"><span class="input-group-text">HTTPS</span><input type="text" class="form-control" id="customjar" name="customjar" required></div>
-                            }
-                            </script>
                             <br>
-                            <h6 class="mb-4">server.properties</h6>
-                            <br>
-                            <textarea style="width:800px; height: 600px;" class="form-control" type="text" id="newtext" name="newtext" ><?php echo file_get_contents('https://server.properties/'); ?></textarea>
-                            <br>
-                            <button style="float: right;" type="submit" class="btn btn-primary"><?php echo $lang['createserver']; ?></button>
-                            </form>
+                            <div id="p1"></div>                   
                         </div>
                     </div>
             </div>
+            <div class="container-fluid pt-4 px-4">
+                <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">server.properties</h6>
+                            <textarea style="width:600; height: 400px;" class="form-control" type="text" id="serverproperties" name="serverproperties" ><?php echo file_get_contents('https://server.properties/'); ?></textarea>
+                            
+                        </div>
+                    </div>
+            </div> 
+            <div class="container-fluid pt-4 px-4">
+                <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <button type="submit" class="btn btn-primary"><?php echo $lang['createserver']; ?></button>
+                        </div>
+                    </div>
+            </div>                  
+            </form>
         </div>
     </div>
+    <script>
+function versionselect() {
+if(document.getElementById('servertype').value != "custom"){
+        if(document.getElementById('servertype').value == "vannila") {
+            document.getElementById("p1").innerHTML = '<h6 class="mb-4"><?php echo $lang['serverversion']; ?></h6><select class="form-select mb-3" name="serverversion" id="serverversion" required><option value="1.19.3">1.19.3</option> <option value="1.16.5">1.16.5</option></select>';
+        }
+        if(document.getElementById('servertype').value == "fabric") {
+            document.getElementById("p1").innerHTML = '<h6 class="mb-4"><?php echo $lang['serverversion']; ?></h6><select class="form-select mb-3" name="serverversion" id="serverversion" required><option value="1.19.3">1.19.3</option> <option value="1.16.5">1.16.5</option></select>';
+        }
+        if(document.getElementById('servertype').value == "vannilaold") {
+            document.getElementById("p1").innerHTML = '<h6 class="mb-4"><?php echo $lang['serverversion']; ?></h6><select class="form-select mb-3" name="serverversion" id="serverversion" required><option value="1.12.2">1.12.2</option> <option value="1.7.10">1.7.10</option> <option value="1.4.7">1.4.7</option> <option value="b1.7.3">Beta 1.7.3</option></select>'
+        }
+}
+else { 
+    document.getElementById("p1").innerHTML = '<div class="input-group mb-3"><span class="input-group-text">HTTPS</span><input type="text" class="form-control" id="customjar" name="customjar" required></div>';
+}
+}
+versionselect();
+</script>
 </body>
 </html>
