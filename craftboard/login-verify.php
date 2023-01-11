@@ -1,6 +1,5 @@
 <?php      
     require 'database.php';
-    require 'lang.php';
         $username = stripcslashes($_POST['username']);
         $language = stripcslashes($_POST['lang']); 
         $sql = $database->prepare('SELECT password FROM users WHERE username="'.$username.'"');         
@@ -16,6 +15,6 @@
         } 
         else
         {
-            echo $lang['wrongpassword'];
+            echo 'Invalid Password';
         }
 ?>
