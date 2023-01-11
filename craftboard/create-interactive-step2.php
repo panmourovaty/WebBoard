@@ -22,7 +22,7 @@ switch ($_POST['servertype']) {
         file_put_contents('./files/servers/'.$_POST['servername'].'/server/server.jar', file_get_contents('https://serverjars.com/api/fetchJar/modded/fabric/'.$_POST['serverversion']));
         break;
     case 'forge':
-        file_put_contents('./files/servers/'.$_POST['servername'].'/server/server.jar', file_get_contents('https://serverjars.com/api/fetchJar/modded/forge/'.$_POST['serverversion']));
+        file_put_contents('./files/servers/'.$_POST['servername'].'/server/server.jar', file_get_contents('https://serverjars.com/api/fetchJar/modded/mohist/'.$_POST['serverversion']));
         break;
     case 'custom':
         file_put_contents('./files/servers/'.$_POST['servername'].'/server/server.jar', file_get_contents($_POST['customjar']));
