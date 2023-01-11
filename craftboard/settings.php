@@ -53,7 +53,7 @@
                 <div class="container-fluid pt-4 px-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                        <h4 class="mb-4">Runners</h4>
+                        <h2 class="mb-4">Runners</h2>
                            <?php
                             foreach ($runners as &$i) {
                                 $output=null;
@@ -77,7 +77,7 @@
             <div class="container-fluid pt-4 px-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                        <h4 class="mb-4">Users</h4>
+                        <h2 class="mb-4">Users</h2>
                         <table class="table table-bordered">
                         <tbody>
                            <?php
@@ -90,7 +90,9 @@
                            ?>
                            </tbody>
                            </table>
-                        <h6 class="mb-4">Create new user</h6>
+                           <br>
+                           <br>
+                        <h4 class="mb-4">Create new user</h4>
                         <form action="account-create.php" method="post">
                             <h6 class="mb-4">User name:</h6>
                             <input type="text" class="form-control" id="username" name="username" required>
