@@ -10,6 +10,7 @@ echo '
             <span class="d-none d-lg-inline-flex">'.$_SESSION['username'].'</span>
         </a>
         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+            <a href="account.php" class="dropdown-item">User settings</a>
             <a href="logout.php" class="dropdown-item">Log Out</a>
         </div>
     </div>
