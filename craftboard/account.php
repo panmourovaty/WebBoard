@@ -5,7 +5,6 @@
 <?php
     require 'account-common.php';
     include 'common.php';
-    include 'config.php';
 ?>
 </head>
 
@@ -39,7 +38,7 @@
         </div>
         <a href="templates.php" class="nav-item nav-link"><i class="fa-solid fa-folder me-2"></i>Templates</a>
         <a href="backups.php" class="nav-item nav-link"><i class="fa-solid fa-floppy-disk me-2"></i>Backups</a>
-        <a href="settings.php" class="nav-item nav-link active"><i class="fa-solid fa-gear me-2"></i>Settings</a>
+        <a href="settings.php" class="nav-item nav-link"><i class="fa-solid fa-gear me-2"></i>Settings</a>
         <a href="create.php" class="nav-item nav-link"><i class="fa fa-plus me-2"></i>Create New Server</a>
     </div>
     </nav>
@@ -51,24 +50,15 @@
                 <div class="container-fluid pt-4 px-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                        <h4 class="mb-4">Runners</h4>
-                           <?php
-                            foreach ($runners as &$i) {
-                                $output=null;
-                                $return=null;
-                                exec('docker image inspect '.$i, $output, $return);
-                            
-                                if ($return != 0)
-                                {
-                                    echo '<br><button type="button" class="btn btn-outline-danger">'.$i.'</button><br>';
-                                }
-                                else
-                                {
-                                    echo '<br><a href="#" onClick="MyWindow=window.open(\'runner-manage.php?runner_action=inspect&runner_name='.$i.'\',\'MyWindow\',\'width=800,height=600\'); return false;"><button type="button" class="btn btn-outline-success">'.$i.'</button></a> <a href="runner-manage.php?runner_action=update&runner_name='.$i.'"><button type="button" class="btn btn-primary">Update</button></a><br>';
-                                }
-                           }
-                           echo "<br>After update restart each container using that runner";
-                           ?>
+                        <h4 class="mb-4">Change Password</h4>
+                        <form action="account-changepassword.php" method="post">
+                            <h6 class="mb-4">Old password:</h6>
+                            <input type="password" class="form-control" id="oldpassword" name="oldpassword" required>
+                            <br>
+                            <h6 class="mb-4">New password:</h6>
+                            <input type="password" class="form-control" id="newpassword" name="newpassword" required><br>
+                            <button type="submit" class="btn btn-primary">Change</button>
+                        </form>
                         </div>
                     </div>
             </div>

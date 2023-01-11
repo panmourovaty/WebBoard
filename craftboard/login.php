@@ -36,7 +36,7 @@
                             <h6 class="mb-4">Password:</h6>
                             <input type="password" class="form-control" id="password" name="password" required><br>
                             <button type="submit" class="btn btn-primary">Log in</button>
-                            </form>
+                        </form>
                     </div>
                 </div>
             </div>

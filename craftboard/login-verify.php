@@ -1,5 +1,5 @@
 <?php      
-    require('database.php');  
+    require 'database.php';  
         $username = stripcslashes($_POST['username']);  
         $sql = $database->prepare('SELECT password FROM users WHERE username="'.$username.'"');         
         $result = $sql->execute();
