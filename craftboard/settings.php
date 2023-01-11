@@ -6,6 +6,11 @@
     require 'account-common.php';
     include 'common.php';
     include 'config.php';
+    include 'database.php';
+    if ($_SESSION['username'] != "admin") {
+        echo 'This page is for Administrator only';
+        exit();
+    }
 ?>
 </head>
 
@@ -69,6 +74,25 @@
                            }
                            echo "<br>After update restart each container using that runner";
                            ?>
+                        </div>
+                    </div>
+            </div>
+            <div class="container-fluid pt-4 px-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                        <h4 class="mb-4">Users</h4>
+                        <table class="table table-borderless">
+                        <tbody>
+                           <?php
+                            $sql = $database->prepare('SELECT username FROM users');         
+                            $result = $sql->execute();
+                            $data = $result->fetchArray();
+                            foreach ($data as &$i) {
+                                    echo '<tr><td>'.$i.'</td></tr>';
+                            }
+                           ?>
+                           </tbody>
+                           </table>
                         </div>
                     </div>
             </div>
