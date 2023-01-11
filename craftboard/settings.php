@@ -4,7 +4,7 @@
 <head>
 <?php
     require 'account-common.php';
-    require 'adminrestrict.php'
+    require 'adminrestrict.php';
     include 'common.php';
     include 'config.php';
     include 'database.php';
