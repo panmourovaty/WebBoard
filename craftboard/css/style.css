@@ -1,4 +1,8 @@
 /********** Template CSS **********/
+@font-face {
+    font-family: "Ubuntu";
+    src: url(fonts/Ubuntu-Regular.woff2);
+}
 :root {
     --primary: #009CFF;
     --light: #F3F6F9;
