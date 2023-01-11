@@ -85,7 +85,7 @@
                             $sql = $database->prepare('SELECT username FROM users');
                             $result = $sql->execute();
                             while ($data = $result->fetchArray()) {
-                                    if ($data['username' == "admin"]) {
+                                    if ($data['username'] == "admin") {
                                         echo '<tr><td>'.$data['username'].'</td></tr>';
                                     }
                                     else {
