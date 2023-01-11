@@ -58,7 +58,7 @@
                             echo '<a href="server-manage.php?server_action=stop&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-danger m-2">'.$lang['stop'].'</button></a><a href="server-manage.php?server_action=restart&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-outline-danger m-2">'.$lang['restart'].'</button></a>';
                         }
                         else {
-                            echo '<a href="server-manage.php?server_action=start&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-success m-2">'.$lang['start'].'</button>';
+                            echo '<a href="server-manage.php?server_action=start&server_name='.$_GET["server_name"].'"><button type="button" style="float: right;" class="btn btn-success m-2">'.$lang['start'].'</button></a>';
                         }
                     ?>
                         <div class="col-sm-12 col-xl-6">
