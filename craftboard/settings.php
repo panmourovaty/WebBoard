@@ -81,7 +81,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
                         <h4 class="mb-4">Users</h4>
-                        <table class="table table-borderless">
+                        <table class="table table-bordered">
                         <tbody>
                            <?php
                             $sql = $database->prepare('SELECT username FROM users');         
