@@ -48,7 +48,7 @@
             <?php
                 include 'navbar.php';
             ?>
-            <form action="create-interactive-step2.php.php" method="post">
+            <form action="create-interactive-step2.php" method="post">
             <div class="container-fluid pt-4 px-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
@@ -72,6 +72,7 @@
                             <option value="vannila" selected>Vannila (Purpur)</option>
                             <option value="vannilaold">Vannila - old (official)</option>
                             <option value="fabric">Modded (Fabric)</option>
+                            <option value="forge">Modded (Forge)</option>
                             <option value="custom">Custom JAR</option>
                             </select>
                             <br>
@@ -107,8 +108,11 @@ if(document.getElementById('servertype').value != "custom"){
         if(document.getElementById('servertype').value == "fabric") {
             document.getElementById("p1").innerHTML = '<h6 class="mb-4"><?php echo $lang['serverversion']; ?></h6><select class="form-select mb-3" name="serverversion" id="serverversion" required><option value="1.19.3">1.19.3</option> <option value="1.16.5">1.16.5</option></select>';
         }
+        if(document.getElementById('servertype').value == "forge") {
+            document.getElementById("p1").innerHTML = '<h6 class="mb-4"><?php echo $lang['serverversion']; ?></h6><select class="form-select mb-3" name="serverversion" id="serverversion" required><option value="1.19.3">1.19.3</option> <option value="1.16.5">1.16.5</option> <option value="1.12.2">1.12.2</option> <option value="1.7.10">1.7.10</option></select>';
+        }
         if(document.getElementById('servertype').value == "vannilaold") {
-            document.getElementById("p1").innerHTML = '<h6 class="mb-4"><?php echo $lang['serverversion']; ?></h6><select class="form-select mb-3" name="serverversion" id="serverversion" required><option value="1.12.2">1.12.2</option> <option value="1.7.10">1.7.10</option> <option value="1.4.7">1.4.7</option> <option value="b1.7.3">Beta 1.7.3</option></select>'
+            document.getElementById("p1").innerHTML = '<h6 class="mb-4"><?php echo $lang['serverversion']; ?></h6><select class="form-select mb-3" name="serverversion" id="serverversion" required><option value="1.12.2">1.12.2</option> <option value="1.7.10">1.7.10</option> <option value="1.4.7">1.4.7</option></select>'
         }
 }
 else { 
