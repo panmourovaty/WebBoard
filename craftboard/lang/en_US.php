@@ -16,5 +16,7 @@ $lang = array(
     "areyousure" => "Are you Sure?",
     "converttotemplate" => "Cenvert to Template",
     "download" => "Download",
+    "templatename" => "Template Name",
+    "convert" => "Convert",
 );
 ?>
