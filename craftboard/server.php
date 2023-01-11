@@ -92,7 +92,7 @@
                             </div>
                         </div>
                                 <?php echo $lang['parameters']; ?>: <br>
-                                <pre><?php print_r($server_info[0]['Config']['Env']); ?></pre>
+                                <div><pre><p><?php print_r($server_info[0]['Config']['Env']); ?></p></pre></div>
                                 <br>
                                 <br>
                                 <a href="#" onClick="MyWindow=window.open('server-console.php?server_name=<?php echo htmlspecialchars($_GET["server_name"]); ?>','MyWindow','width=800,height=600'); return false;"><button type="button" class="btn btn-sm btn-secondary m-2"><?php echo $lang['console']; ?></button></a>
