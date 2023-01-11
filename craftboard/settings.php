@@ -4,13 +4,10 @@
 <head>
 <?php
     require 'account-common.php';
+    require 'adminrestrict.php'
     include 'common.php';
     include 'config.php';
     include 'database.php';
-    if ($_SESSION['username'] != "admin") {
-        echo 'This page is for Administrator only';
-        exit();
-    }
 ?>
 </head>
 
@@ -93,6 +90,15 @@
                            ?>
                            </tbody>
                            </table>
+                        <h6 class="mb-4">Create new user</h6>
+                        <form action="account-create.php" method="post">
+                            <h6 class="mb-4">User name:</h6>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                            <br>
+                            <h6 class="mb-4">Password:</h6>
+                            <input type="password" class="form-control" id="password" name="password" required><br>
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </form>
                         </div>
                     </div>
             </div>
