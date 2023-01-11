@@ -82,11 +82,10 @@
                         <table class="table table-bordered">
                         <tbody>
                            <?php
-                            $sql = $database->prepare('SELECT username FROM users');         
+                            $sql = $database->prepare('SELECT username FROM users');
                             $result = $sql->execute();
-                            $data = $result->fetchArray();
-                            foreach ($data as &$i) {
-                                    echo '<tr><td>'.$i.'</td></tr>';
+                            while ($data = $result->fetchArray()) {
+                                    echo '<tr><td>'.$data['username'].'</td></tr>';
                             }
                            ?>
                            </tbody>
