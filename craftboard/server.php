@@ -74,13 +74,13 @@
                                 }
                                 ?>
                                 <br>
-                                <?php echo $lang['laststart'].':'; 
+                                <?php echo $lang['laststart'].': '; 
                                 $started_parsed = date_parse_from_format('Y-m-d\TH:i:s+',$server_info[0]['State']['StartedAt']); 
-                                echo $started_parsed['hour'].':'.$started_parsed['minute'].'-'.$started_parsed['day'].".".$started_parsed['month']."-".$started_parsed['year'];?>
+                                echo $started_parsed['hour'].': '.$started_parsed['minute'].'-'.$started_parsed['day'].".".$started_parsed['month']."-".$started_parsed['year'];?>
                                 <br>
-                                <?php echo $lang['created'].':';
+                                <?php echo $lang['created'].': ';
                                 $created_parsed = date_parse_from_format('Y-m-d\TH:i:s+',$server_info[0]['Created']); 
-                                echo $created_parsed['hour'].':'.$created_parsed['minute'].'-'.$created_parsed['day'].".".$created_parsed['month']."-".$created_parsed['year'];?>
+                                echo $created_parsed['hour'].': '.$created_parsed['minute'].'-'.$created_parsed['day'].".".$created_parsed['month']."-".$created_parsed['year'];?>
                                 <br>
                                 <?php echo $lang['runner'].': '.$server_info[0]['Config']['Image']; ?>
                                 <br>
