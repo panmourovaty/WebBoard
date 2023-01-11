@@ -52,6 +52,8 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
                             <a href="create-template-step1.php"><button type="button" class="btn btn-lg btn-primary m-2"><?php echo $lang['createfromtemplate']; ?></button></a>
+                            <br>
+                            <a href="create-interactive-step1.php"><button type="button" class="btn btn-lg btn-primary m-2"><?php echo $lang['createinteractively']; ?></button></a>
                         </div>
                     </div>
             </div>

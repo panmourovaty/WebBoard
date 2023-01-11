@@ -19,6 +19,7 @@ $lang = array(
     "templatename" => "Template Name",
     "convert" => "Convert",
     "createfromtemplate" => "Create from Template",
+    "createinteractively" => "Create interactively",
     "selecttemplate" => "Select Template",
     "creatingserverfrom" => "Creating Server from",
     "servername" => "Server Name",
@@ -61,6 +62,14 @@ $lang = array(
     "createnewuser" => "Create New User",
     "username" => "User Name",
     "password" => "Password",
+    "upload" => "Upload",
+    "servertype" => "Server Type",
+    "serverversion" => "Server Version",
+    "upload" => "Upload",
+    "upload" => "Upload",
+    "upload" => "Upload",
+    "upload" => "Upload",
+    "upload" => "Upload",
     "upload" => "Upload",
 );
 ?>
