@@ -12,5 +12,9 @@ $lang = array(
     "oldpassword" => "Old Password",
     "newpassword" => "New Password",
     "change" => "Change",
+    "wrongpassword" => "Invalid Password.",
+    "areyousure" => "Are you Sure?",
+    "converttotemplate" => "Cenvert to Template",
+    "download" => "Download",
 );
 ?>

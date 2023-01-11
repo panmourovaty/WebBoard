@@ -1,6 +1,7 @@
 <?php     
     require 'account-common.php';
     require 'database.php';
+    require 'lang.php';
         $sql = $database->prepare('SELECT password FROM users WHERE username="'.$_SESSION['username'].'"');         
         $result = $sql->execute();
         $data = $result->fetchArray();
@@ -11,6 +12,6 @@
         } 
         else
         {
-            echo 'Invalid old password.';
+            echo $lang['wrongpassword'];
         }
 ?>

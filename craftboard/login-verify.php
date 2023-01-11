@@ -1,6 +1,7 @@
 <?php      
     require 'database.php';  
-        $username = stripcslashes($_POST['username']);  
+        $username = stripcslashes($_POST['username']);
+        $language = stripcslashes($_POST['lang']); 
         $sql = $database->prepare('SELECT password FROM users WHERE username="'.$username.'"');         
         $result = $sql->execute();
         $data = $result->fetchArray();
@@ -9,6 +10,7 @@
             session_start();
             $_SESSION['login'] = true;
             $_SESSION['username'] = $username;
+            $_SESSION['lang'] = $language;
             header('Location: index.php');
         } 
         else
