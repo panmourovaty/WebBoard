@@ -6,7 +6,7 @@
         $data = $result->fetchArray();
         if (password_verify($_POST['oldpassword'], $data['password'])) 
         {
-            $query = $database->exec('UPDATE users SET password='.password_hash($_POST['newpassword'], PASSWORD_ARGON2ID).' WHERE user="'.$_SESSION['username'].'"');
+            $query = $database->exec('UPDATE users SET password="'.password_hash($_POST['newpassword'], PASSWORD_ARGON2ID).'" WHERE user="'.$_SESSION['username'].'"');
             header('Location: logout.php');
         } 
         else
