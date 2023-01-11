@@ -35,11 +35,12 @@
                             <br>
                             <h6 class="mb-4">Password:</h6>
                             <input type="password" class="form-control" id="password" name="password" required><br>
-                            <select name="lang" id="lang">
+                            <select style="width: 150px; display: inline;" class="form-select mb-3" name="lang" id="lang">
+                            <option value="en_US" selected>English</option>
                             <?php
                             if ($handle = opendir('./lang')) {
                                 while (false !== ($entry = readdir($handle))) {
-                                    if ($entry != "." && $entry != "..") {
+                                    if ($entry != "." && $entry != ".." && $entry != "en_US.php") {
                                         include 'lang/'.$entry;
                                         echo '<option value="'.$lang['langcode'].'">'.$lang['langname'].'</option>';
                                     }   
@@ -49,7 +50,7 @@
                             }
                             ?>
                             </select>
-                            <button type="submit" class="btn btn-primary">Log in</button>
+                            <button style="float: right;" type="submit" class="btn btn-primary">Log in</button>
                         </form>
                     </div>
                 </div>
