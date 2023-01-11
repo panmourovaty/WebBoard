@@ -85,7 +85,7 @@
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">server.properties</h6>
                             <textarea style="width:600; height: 400px;" class="form-control" type="text" id="serverproperties" name="serverproperties" ><?php echo file_get_contents('https://server.properties/'); ?></textarea>
-                            
+                            <p><?php echo $lang['dontchangeportmessage']; ?></p>
                         </div>
                     </div>
             </div> 
