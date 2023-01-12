@@ -13,6 +13,6 @@ function loadacetoform() {
 }
 </script>
 <form action="server-manage.php?server_action=edit&server_name=<?php echo $_GET["server_name"]; ?>" method="post">
-<input name="newtext" type="newtext" id="newtext" hidden></input>
-<input style="float: right;" class="btn btn-lg btn-success" type="submit" value="<?php echo $lang['apply']; ?>"/><button style="float: right;" class="btn btn-lg btn-destructive" onClick="window.close()">Cancel</button>
+<textarea name="newtext" id="newtext" hidden></textarea>
+<input onClick="loadacetoform()" style="float: right;" class="btn btn-lg btn-success" type="submit" value="<?php echo $lang['apply']; ?>"/><button style="float: right;" class="btn btn-lg btn-destructive" onClick="window.close()">Cancel</button>
 </form>
