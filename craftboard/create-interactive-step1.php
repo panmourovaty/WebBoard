@@ -84,6 +84,7 @@
                 <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">server.properties</h6>
+                            <div style="width: 600px; height: 700px;">
                             <?php
                             $EDITOR_BASETEXT = file_get_contents('https://server.properties/');
                             $EDITOR_TEXTTYPE = "properties";
@@ -98,6 +99,7 @@
                             <p><?php echo $lang['dontchangeportmessage']; ?></p>
                         </div>
                     </div>
+                </div>
             </div> 
             <div class="container-fluid pt-4 px-4">
                 <div class="col-sm-12 col-xl-6">
