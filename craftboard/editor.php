@@ -21,6 +21,7 @@ echo'
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/mode-yaml.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/worker-yaml.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/mode-properties.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/sqlserver");

@@ -84,7 +84,17 @@
                 <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">server.properties</h6>
-                            <textarea style="width:600; height: 400px;" class="form-control" type="text" id="serverproperties" name="serverproperties" ><?php echo file_get_contents('https://server.properties/'); ?></textarea>
+                            <?php
+                            $EDITOR_BASETEXT = file_get_contents('https://server.properties/');
+                            $EDITOR_TEXTTYPE = "properties";
+                            require 'editor.php';
+                            ?>
+                            <script>
+                            function loadacetoform() {
+                                document.getElementById("serverproperties").value = editor.getValue();
+                            }
+                            </script>
+                            <textarea name="serverproperties" id="serverproperties" hidden></textarea>
                             <p><?php echo $lang['dontchangeportmessage']; ?></p>
                         </div>
                     </div>
@@ -92,7 +102,7 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                            <button type="submit" class="btn btn-primary"><?php echo $lang['createserver']; ?></button>
+                            <button onClick="loadacetoform()" type="submit" class="btn btn-primary"><?php echo $lang['createserver']; ?></button>
                         </div>
                     </div>
             </div>                  
