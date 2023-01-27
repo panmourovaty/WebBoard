@@ -16,5 +16,6 @@
         else
         {
             echo 'Invalid Password';
+            header( "refresh:3;url=login.php" );
         }
 ?>

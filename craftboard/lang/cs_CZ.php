@@ -56,6 +56,7 @@ $lang = array(
     "executecommand" => "Spustit Příkaz",
     "editing" => "Upravuji",
     "apply" => "Aplikovat",
+    "save" => "Uložit",
     "update" => "Aktualizovat",
     "updateinfomessage" => "Po aktualizaci musíte restartovat runnery používajíci daný spouštěč",
     "users" => "Uživatelé",

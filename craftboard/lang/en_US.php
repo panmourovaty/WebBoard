@@ -56,6 +56,7 @@ $lang = array(
     "executecommand" => "Execute Command",
     "editing" => "Editing",
     "apply" => "Apply",
+    "save" => "Save",
     "update" => "Update",
     "updateinfomessage" => "After update restart each container using that runner",
     "users" => "Users",
