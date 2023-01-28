@@ -2,15 +2,26 @@
 require 'account-common.php';
 include 'common.php';
 require 'lang.php';
-
-$n = "0";
-$m = "3";
-
+?>
+<form action="filemanager-manage.php?filemanager_action=changesettings" method="post">
+<h6 class="mb-4"><?php echo $lang['columns']; ?>:</h6>
+<input type="number" id="filemanager_columns" name="filemanager_columns" min="1" max="20">
+<button type="submit" class="btn btn-primary"><?php echo $lang['save']; ?></button>
+</form>
+<?php
 if (str_contains($_GET['folder_path'], '..') || str_contains($_GET['folder_path'], '../')) {
     echo "Invalid request";
     http_response_code(404);
     exit();
 }
+$n = "1";
+if (isset($_SESSION['filemanager_columns'])) {
+    $m = $_SESSION['filemanager_columns'];
+}
+else {
+    $m = "4";
+}
+
 echo '
 <style>
 th, td {
@@ -38,8 +49,8 @@ if ($handle = opendir('./files/servers/'.$_GET['server_name'].'/server'.$_GET['f
                         echo '<td><a style="color:#6c757d;" href="#" onClick="MyWindow=window.open(\'filemanager-edit.php?server_name='.$_GET['server_name'].'&folder_path='.$_GET['folder_path'].'&file_name='.$entry.'\',\'MyWindow\',\'width=800,height=800\'); return false;"><i class="fa-solid fa-file fa-4x"></i><br>'.$entry.'</a>';
                         break;
                 }
-                echo '<br><a style="color:#198754;" href="./files/servers/'.$_GET['server_name'].'/server/'.$_GET['folder_path'].'/'.$entry.'" download><i class="fa-solid fa-file-arrow-down"></i></a>&nbsp;';
-                echo '<a style="color:#dc3545;" href="#"><i class="fa-solid fa-file-circle-xmark"></i></a></td>';
+                echo '&nbsp;[&nbsp;<a style="color:#198754;" href="./files/servers/'.$_GET['server_name'].'/server/'.$_GET['folder_path'].'/'.$entry.'" download><i class="fa-solid fa-file-arrow-down"></i></a>&nbsp;|&nbsp;';
+                echo '<a style="color:#dc3545;" onclick="return confirm(\'Are you sure?\')" href="filemanager-manage.php?filemanager_action=delete&server_name='.$_GET['server_name'].'&folder_path='.$_GET['folder_path'].'&file_name='.$entry.'"><i class="fa-solid fa-file-circle-xmark"></i></a>&nbsp;]</td>';
             }
             if ($n == $m) {
                 echo '</tr>';

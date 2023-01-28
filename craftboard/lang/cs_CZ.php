@@ -67,5 +67,6 @@ $lang = array(
     "servertype" => "Typ serveru",
     "serverversion" => "Verze serveru",
     "dontchangeportmessage" => "Neměňte port zde, nechte výchozí (25565).",
+    "columns" => "Sloupce",
 );
 ?>

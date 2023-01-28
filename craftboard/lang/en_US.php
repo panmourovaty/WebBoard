@@ -67,5 +67,6 @@ $lang = array(
     "servertype" => "Server Type",
     "serverversion" => "Server Version",
     "dontchangeportmessage" => "Do not change port here, leave to default (25565).",
+    "columns" => "Columns",
 );
 ?>
