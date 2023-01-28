@@ -38,7 +38,7 @@ if ($handle = opendir('./files/servers/'.$_GET['server_name'].'/server'.$_GET['f
                         echo '<td><a style="color:#6c757d;" href="#" onClick="MyWindow=window.open(\'filemanager-edit.php?server_name='.$_GET['server_name'].'&folder_path='.$_GET['folder_path'].'&file_name='.$entry.'\',\'MyWindow\',\'width=800,height=800\'); return false;"><i class="fa-solid fa-file fa-4x"></i><br>'.$entry.'</a>';
                         break;
                 }
-                echo '<br><a style="color:#198754;" href="#"><i class="fa-solid fa-file-arrow-down"></i></a>&nbsp;';
+                echo '<br><a style="color:#198754;" href="./files/servers/'.$_GET['server_name'].'/server/'.$_GET['folder_path'].'/'.$entry.'" download><i class="fa-solid fa-file-arrow-down"></i></a>&nbsp;';
                 echo '<a style="color:#dc3545;" href="#"><i class="fa-solid fa-file-circle-xmark"></i></a></td>';
             }
             if ($n == $m) {
