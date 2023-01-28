@@ -10,6 +10,10 @@ switch ($_GET["filemanager_action"]) {
         unlink('./files/servers/'.$_GET['server_name'].'/server'.$_GET['folder_path'].'/'.$_GET['file_name']);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
         break;
+    case "deletefolder":
+        shell_exec('rm -rf ./files/servers/'.$_GET['server_name'].'/server'.$_GET['folder_path'].'/'.$_GET['file_name']);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        break;
     case "changesettings":
         $_SESSION['filemanager_columns'] = $_POST['filemanager_columns'];
         header('Location: ' . $_SERVER['HTTP_REFERER']);
