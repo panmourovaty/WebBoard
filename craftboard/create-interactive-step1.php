@@ -87,7 +87,7 @@
                             <div style="width: 600px; height: 700px;">
                                 <?php
                                 $EDITOR_BASETEXT = file_get_contents('https://server.properties/');
-                                $EDITOR_TEXTTYPE = "properties";
+                                $EDITOR_FILENAME = 'server.properties';
                                 require 'editor.php';
                                 ?>
                                 <script>
@@ -96,7 +96,7 @@
                                     }
                                 </script>
                                 <textarea name="serverproperties" id="serverproperties" hidden></textarea>
-                                <p><?php echo $lang['dontchangeportmessage']; ?></p>
+                                <p style="float: right;"><?php echo $lang['dontchangeportmessage']; ?></p>
                             </div>
                         </div>
                     </div>
