@@ -36,6 +36,7 @@ $lang = array(
     "usersettings" => "User Settings",
     "logout" => "Log Out",
     "stop" => "Stop",
+    "forcestop" => "Force Stop",
     "restart" => "Restart",
     "start" => "Start",
     "status" => "Status",

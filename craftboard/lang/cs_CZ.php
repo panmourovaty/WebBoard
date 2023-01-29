@@ -36,6 +36,7 @@ $lang = array(
     "usersettings" => "Uživatelské nastavení",
     "logout" => "Odhlásit se",
     "stop" => "Zastavit",
+    "forcestop" => "Vynutit Zastavení",
     "restart" => "Restartovat",
     "start" => "Spustit",
     "status" => "Stav",
