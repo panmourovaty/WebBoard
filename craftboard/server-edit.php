@@ -4,7 +4,7 @@ include 'common.php';
 require 'lang.php';
 echo "<title>".$lang['editing'].' '.$_GET["server_name"]."</title>";
 $EDITOR_BASETEXT = file_get_contents('./files/servers/'.$_GET['server_name'].'/docker-compose.yml');
-$EDITOR_TEXTTYPE = "yaml";
+$EDITOR_FILENAME = "docker-compose.yml";
 require 'editor.php';
 ?>
 <script>

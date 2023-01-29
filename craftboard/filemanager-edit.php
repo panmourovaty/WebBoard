@@ -9,7 +9,7 @@ if (str_contains($_GET['folder_path'], '..') || str_contains($_GET['folder_path'
 }
 echo "<title>".$lang['editing'].' '.$_GET["server_name"]."</title>";
 $EDITOR_BASETEXT = file_get_contents('./files/servers/'.$_GET['server_name'].'/server'.$_GET['folder_path'].'/'.$_GET['file_name']);
-$EDITOR_TEXTTYPE = "plain_text";
+$EDITOR_FILENAME = $_GET['file_name'];
 require 'editor.php';
 ?>
 <script>

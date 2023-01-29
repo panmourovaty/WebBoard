@@ -1,5 +1,5 @@
 <?php
-$ACEVERSION = "1.14.0";
+$ACEVERSION = "1.15.0";
 echo'
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono">
 <div style="position: static; width: 100%; height: 90%;">
@@ -19,14 +19,17 @@ echo'
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/keybinding-emacs.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/keybinding-vscode.min.js" type="text/javascript" charset="utf-8"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/ext-modelist.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/mode-yaml.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/worker-yaml.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/mode-json.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/worker-json.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/mode-properties.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/sqlserver");
 editor.setKeyboardHandler("ace/keyboard/vscode");
-editor.session.setMode("ace/mode/'.$EDITOR_TEXTTYPE.'");
+editor.session.setMode( modes.getModeForPath( '.$EDITOR_FILENAME.' ).mode );
 editor.setOptions({
   fontFamily: "Ubuntu Mono",
   fontSize: "16"
