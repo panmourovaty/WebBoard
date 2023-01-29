@@ -30,11 +30,16 @@ switch ($_GET["filemanager_action"]) {
         }
         if ($uploadOk == 0) {
             echo "<br>Sorry, your file was not uploaded.";
+            header( "refresh:5;URL=".$_SERVER['HTTP_REFERER'] );
+            exit();
         } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-        } else {
+        } 
+        else {
         echo "<br>Sorry, there was an error uploading your file.";
+        header( "refresh:5;URL=".$_SERVER['HTTP_REFERER'] );
+        exit();
         }
         }
         header('Location: ' . $_SERVER['HTTP_REFERER']);
