@@ -2,109 +2,124 @@
 <html lang="en">
 
 <head>
-<?php
+    <?php
     require 'account-common.php';
     require 'lang.php';
     include 'common.php';
     $system_info_json = shell_exec('docker system info --format "{{json .}}"');
     $system_info = json_decode($system_info_json, true);
-?>
+    ?>
 </head>
 
 <body>
     <div class="container-fluid position-relative bg-white d-flex p-0">
-    <div class="sidebar pe-4 pb-3">
-    <nav class="navbar bg-light navbar-light">
-    <a href="/" class="navbar-brand mx-4 mb-3">
-        <h3 class="text-primary"><i class="fa-solid fa-cube me-2"></i>CraftBoard</h3>
-    </a>
-    <div class="navbar-nav w-100">
-    <a href="/" class="nav-item nav-link"><i class="fa fa-home me-2 active"></i><?php echo $lang['dashboard']; ?></a>
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-server me-2"></i><?php echo $lang['servers']; ?></a>
-            <div class="dropdown-menu bg-transparent border-0">
-            <?php
-                    if ($handle = opendir('./files/servers')) {
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="/" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa-solid fa-cube me-2"></i>CraftBoard</h3>
+                </a>
+                <div class="navbar-nav w-100">
+                    <a href="/" class="nav-item nav-link"><i class="fa fa-home me-2 active"></i><?php echo $lang['dashboard']; ?></a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-server me-2"></i><?php echo $lang['servers']; ?></a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <?php
+                            if ($handle = opendir('./files/servers')) {
 
-                        while (false !== ($entry = readdir($handle))) {
-                    
-                            if ($entry != "." && $entry != "..") {
-                    
-                                echo '<a href="server.php?server_name=' . $entry . '" class="dropdown-item">'. $entry .'</a>';
+                                while (false !== ($entry = readdir($handle))) {
+
+                                    if ($entry != "." && $entry != "..") {
+
+                                        echo '<a href="server.php?server_name=' . $entry . '" class="dropdown-item">' . $entry . '</a>';
+                                    }
+                                }
+
+                                closedir($handle);
                             }
-                        }
-                    
-                        closedir($handle);
-                    }
-            ?>
-            </div>
+                            ?>
+                        </div>
+                    </div>
+                    <a href="templates.php" class="nav-item nav-link"><i class="fa-solid fa-folder me-2"></i><?php echo $lang['templates']; ?></a>
+                    <a href="backups.php" class="nav-item nav-link"><i class="fa-solid fa-floppy-disk me-2"></i><?php echo $lang['backups']; ?></a>
+                    <a href="settings.php" class="nav-item nav-link"><i class="fa-solid fa-gear me-2"></i><?php echo $lang['settings']; ?></a>
+                    <a href="create.php" class="nav-item nav-link"><i class="fa fa-plus me-2"></i><?php echo $lang['createserver']; ?></a>
+                </div>
+            </nav>
         </div>
-        <a href="templates.php" class="nav-item nav-link"><i class="fa-solid fa-folder me-2"></i><?php echo $lang['templates']; ?></a>
-        <a href="backups.php" class="nav-item nav-link"><i class="fa-solid fa-floppy-disk me-2"></i><?php echo $lang['backups']; ?></a>
-        <a href="settings.php" class="nav-item nav-link"><i class="fa-solid fa-gear me-2"></i><?php echo $lang['settings']; ?></a>
-        <a href="create.php" class="nav-item nav-link"><i class="fa fa-plus me-2"></i><?php echo $lang['createserver']; ?></a>
-    </div>
-    </nav>
-    </div> 
         <div class="content">
             <?php
-                include 'navbar.php';
+            include 'navbar.php';
             ?>
-<div class="container-fluid pt-4 px-4">
-    <div class="col-sm-12 col-xl-6">
-        <div class="bg-light rounded h-100 p-4">
-            <div class="col-sm-12 col-xl-6">
-                <div class="bg-light rounded h-100 p-6">
-                    <h2 class="mb-4">System Info</h2>
-                    <br>
-                    <table class="table table-borderless">
-                                <tbody>
-                                    <tr>
-                                        <td><b><?php echo $lang['systemname']; ?></b></td>
-                                        <td><b><?php echo $system_info['Name']; ?></b></td>
-                                    </tr>
-                                    <tr><td><td></tr>
-                                    <tr><td><td></tr>
-                                    <tr><td><td></tr>
-                                    <tr>
-                                        <td><?php echo $lang['operatingsystem']; ?></td>
-                                        <td><?php echo $system_info['OperatingSystem']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td><?php echo $lang['dockerversion']; ?></td>
-                                        <td><?php echo $system_info['ServerVersion']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td><?php echo $lang['kernel']; ?></td>
-                                        <td><?php echo $system_info['KernelVersion']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td><?php echo $lang['arch']; ?></td>
-                                        <td><?php echo $system_info['Architecture']; ?></td>
-                                    </tr>
-                                    <tr><td><td></tr>
-                                    <tr><td><td></tr>
-                                    <tr>
-                                        <td><?php echo $lang['storage']; ?></td>
-                                        <td><?php echo $system_info['Driver']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td><?php echo $lang['cpucores']; ?></td>
-                                        <td><?php echo $system_info['NCPU']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td><?php echo $lang['memory']; ?></td>
-                                        <td><?php echo $system_info['MemTotal']/"1073741824"; ?> GiB</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+            <div class="container-fluid pt-4 px-4">
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4">
+                        <div class="col-sm-12 col-xl-6">
+                            <div class="bg-light rounded h-100 p-6">
+                                <h2 class="mb-4">System Info</h2>
+                                <br>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td><b><?php echo $lang['systemname']; ?></b></td>
+                                            <td><b><?php echo $system_info['Name']; ?></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            <td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            <td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            <td>
+                                        </tr>
+                                        <tr>
+                                            <td><?php echo $lang['operatingsystem']; ?></td>
+                                            <td><?php echo $system_info['OperatingSystem']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><?php echo $lang['dockerversion']; ?></td>
+                                            <td><?php echo $system_info['ServerVersion']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><?php echo $lang['kernel']; ?></td>
+                                            <td><?php echo $system_info['KernelVersion']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><?php echo $lang['arch']; ?></td>
+                                            <td><?php echo $system_info['Architecture']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            <td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            <td>
+                                        </tr>
+                                        <tr>
+                                            <td><?php echo $lang['storage']; ?></td>
+                                            <td><?php echo $system_info['Driver']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><?php echo $lang['cpucores']; ?></td>
+                                            <td><?php echo $system_info['NCPU']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><?php echo $lang['memory']; ?></td>
+                                            <td><?php echo $system_info['MemTotal'] / "1073741824"; ?> GiB</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
-</div>
 </body>
+
 </html>

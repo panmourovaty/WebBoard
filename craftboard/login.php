@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-<?php
+    <?php
     include 'common.php';
-?>
+    ?>
 </head>
 
 <body>
@@ -26,19 +26,19 @@
                             <h6 class="mb-4">Password:</h6>
                             <input type="password" class="form-control" id="password" name="password" required><br>
                             <select style="width: 150px; display: inline;" class="form-select mb-3" name="lang" id="lang">
-                            <option value="en_US" selected>English</option>
-                            <?php
-                            if ($handle = opendir('./lang')) {
-                                while (false !== ($entry = readdir($handle))) {
-                                    if ($entry != "." && $entry != ".." && $entry != "en_US.php") {
-                                        include 'lang/'.$entry;
-                                        echo '<option value="'.$lang['langcode'].'">'.$lang['langname'].'</option>';
-                                    }   
-                                }
+                                <option value="en_US" selected>English</option>
+                                <?php
+                                if ($handle = opendir('./lang')) {
+                                    while (false !== ($entry = readdir($handle))) {
+                                        if ($entry != "." && $entry != ".." && $entry != "en_US.php") {
+                                            include 'lang/' . $entry;
+                                            echo '<option value="' . $lang['langcode'] . '">' . $lang['langname'] . '</option>';
+                                        }
+                                    }
 
-                                closedir($handle);
-                            }
-                            ?>
+                                    closedir($handle);
+                                }
+                                ?>
                             </select>
                             <button style="float: right;" type="submit" class="btn btn-primary">Log in</button>
                         </form>
@@ -46,7 +46,6 @@
                 </div>
             </div>
         </div>
-        <!-- Sign In End -->
     </div>
 </body>
 
