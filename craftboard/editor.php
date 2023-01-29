@@ -27,9 +27,10 @@ echo'
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/'.$ACEVERSION.'/mode-properties.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
 var editor = ace.edit("editor");
+var modes = ace.require("ace/ext/modelist");
 editor.setTheme("ace/theme/sqlserver");
 editor.setKeyboardHandler("ace/keyboard/vscode");
-editor.session.setMode( modes.getModeForPath( '.$EDITOR_FILENAME.' ).mode );
+editor.session.setMode( modes.getModeForPath("'.$EDITOR_FILENAME.'").mode );
 editor.setOptions({
   fontFamily: "Ubuntu Mono",
   fontSize: "16"
