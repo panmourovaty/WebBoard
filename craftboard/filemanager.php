@@ -86,6 +86,7 @@ th, td {
             </div>
             <br>
             <?php
+            echo '&nbsp;&nbsp; '.$_GET['folder_path'].'<br>';
             echo '<div><table class="table table-borderless"><tbody><tr>';
             if ($handle = opendir('./files/servers/' . $_GET['server_name'] . '/server' . $_GET['folder_path'])) {
                 while (false !== ($entry = readdir($handle))) {
