@@ -13,4 +13,3 @@ switch ($_GET["runner_action"]) {
     echo "<p style=\"font-family:Ubuntu\">".$output."</p></div>";
     break;
 }
-?>

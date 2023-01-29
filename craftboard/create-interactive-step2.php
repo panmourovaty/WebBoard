@@ -106,4 +106,3 @@ file_put_contents('./files/servers/'.$_POST['servername'].'/server/eula.txt', 'e
 
 shell_exec('./create-int.sh '.$workfolder.' '.$_POST["servername"]);
 header('Location: /server.php?server_name='.$_POST["servername"]);
-?>

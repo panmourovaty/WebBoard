@@ -38,7 +38,7 @@ th, td {
                 <div class="navbar-nav w-100">
                     <a href="/" class="nav-item nav-link"><i class="fa fa-home me-2"></i><?php echo $lang['dashboard']; ?></a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-server me-2 active"></i><?php echo $lang['servers']; ?></a>
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="fa fa-server me-2"></i><?php echo $lang['servers']; ?></a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <?php
                             if ($handle = opendir('./files/servers')) {
@@ -92,7 +92,7 @@ th, td {
                     if ($entry != "." && $entry != "..") {
                         if (is_dir('./files/servers/' . $_GET['server_name'] . '/server/' . $_GET['folder_path'] . '/' . $entry) == true) {
                             echo '<td><a href="filemanager.php?server_name=' . $_GET['server_name'] . '&folder_path=' . $_GET['folder_path'] . '/' . $entry . '"><b><i class="fa-solid fa-folder fa-4x"></i><br>' . $entry . '</b></a>';
-                            echo '&nbsp;[&nbsp;<a style="color:#dc3545;" onclick="return confirm(\'Are you sure?\')" href="filemanager-manage.php?filemanager_action=deletefolder&server_name=' . $_GET['server_name'] . '&folder_path=' . $_GET['folder_path'] . '&file_name=' . $entry . '"><i class="fa-solid fa-file-circle-xmark"></i></a>&nbsp;]</td>';
+                            echo '&nbsp;&nbsp;<a style="color:#dc3545;" onclick="return confirm(\'Are you sure?\')" href="filemanager-manage.php?filemanager_action=deletefolder&server_name=' . $_GET['server_name'] . '&folder_path=' . $_GET['folder_path'] . '&file_name=' . $entry . '"><i class="fa-solid fa-file-circle-xmark"></i></a></td>';
                         } else {
                             switch ($entry) {
                                 case str_ends_with($entry, 'jar'):
@@ -105,7 +105,7 @@ th, td {
                                     echo '<td><a style="color:#6c757d;" href="#" onClick="MyWindow=window.open(\'filemanager-edit.php?server_name=' . $_GET['server_name'] . '&folder_path=' . $_GET['folder_path'] . '&file_name=' . $entry . '\',\'MyWindow\',\'width=800,height=800\'); return false;"><i class="fa-solid fa-file fa-4x"></i><br>' . $entry . '</a>';
                                     break;
                             }
-                            echo '&nbsp;[&nbsp;<a style="color:#dc3545;" onclick="return confirm(\'Are you sure?\')" href="filemanager-manage.php?filemanager_action=delete&server_name=' . $_GET['server_name'] . '&folder_path=' . $_GET['folder_path'] . '&file_name=' . $entry . '"><i class="fa-solid fa-file-circle-xmark"></i></a>&nbsp;]</td>';
+                            echo '&nbsp;&nbsp;<a style="color:#dc3545;" onclick="return confirm(\'Are you sure?\')" href="filemanager-manage.php?filemanager_action=delete&server_name=' . $_GET['server_name'] . '&folder_path=' . $_GET['folder_path'] . '&file_name=' . $entry . '"><i class="fa-solid fa-file-circle-xmark"></i></a></td>';
                         }
                         if ($n == $m) {
                             echo '</tr>';
