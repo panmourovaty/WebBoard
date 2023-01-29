@@ -18,5 +18,26 @@ switch ($_GET["filemanager_action"]) {
         $_SESSION['filemanager_columns'] = $_POST['filemanager_columns'];
         header('Location: ' . $_SERVER['HTTP_REFERER']);
         break;
+    case "upload":
+        $_SESSION['filemanager_columns'] = $_POST['filemanager_columns'];
+        $target_dir = './files/servers/'.$_GET['server_name'].'/server'.$_GET['folder_path'].'/';
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+
+        if (file_exists($target_file)) {
+            echo "Sorry, file already exists.";
+            $uploadOk = 0;
+        }
+        if ($uploadOk == 0) {
+            echo "<br>Sorry, your file was not uploaded.";
+        } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+        } else {
+        echo "<br>Sorry, there was an error uploading your file.";
+        }
+        }
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        break;
 }
 ?>
