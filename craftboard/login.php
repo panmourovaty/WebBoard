@@ -15,7 +15,7 @@
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <a href="index.html" class="">
-                                <h3 class="text-primary"><i class="fa-solid fa-cube me-2"></i>CraftBoard</h3>
+                                <h3 class="text-primary"><i class="fa-solid fa-cube me-2"></i>WebBoard</h3>
                             </a>
                             <h3>Log in</h3>
                         </div>
